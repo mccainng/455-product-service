@@ -1,4 +1,5 @@
-from flask import Flask, jsonify,requests
+from flask import Flask, jsonify
+import requests
 app = Flask(__name__)
 
 products = [
