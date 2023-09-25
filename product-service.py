@@ -14,7 +14,7 @@ def retrieve_products():
     return jsonify(products)
 
 #Endpint 2: get product by ID
-@app.route('http://0.0.0.0:10000/products/<int:product_id>', methods=['GET'])
+@app.route('/products/<int:product_id>', methods=['GET'])
 def get_product_by_id(product_id):
     product = next((p for p in products if p['id'] == product_id), None)
     if product:
