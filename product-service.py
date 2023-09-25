@@ -9,7 +9,7 @@ products = [
 
 ]
 # Endpoint 1: List products 
-@app.route('http://127.0.0.1:5000/products', methods=['GET'])
+@app.route('/products', methods=['GET'])
 def retrieve_products():
     return jsonify(products)
 
