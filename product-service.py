@@ -14,7 +14,7 @@ def retrieve_products():
     return jsonify(products)
 
 #Endpint 2: get product by ID
-@app.route('http://0.0.0.0:10000/products/<int:product_id>', methods=['GET'])
+@app.route('/products/<int:product_id>', methods=['GET'])
 def get_product_by_id(product_id):
     product = next((p for p in products if p['id'] == product_id), None)
     if product:
@@ -23,7 +23,7 @@ def get_product_by_id(product_id):
         return jsonify({"message": "Product not found"}), 404
     
 #Endpoint 3: Allow the addition of new products 
-@app.route('http://0.0.0.0:10000/products', methods=['POST'])
+@app.route('/products', methods=['POST'])
 def add_new_product():
     data = requests.get_json()
     if 'name' in data and 'price' in data and 'quantity' in data:
