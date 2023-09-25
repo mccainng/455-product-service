@@ -9,7 +9,7 @@ products = [
 
 ]
 # Endpoint 1: List products 
-@app.route('/products', methods=['GET'])
+@app.route('https://four55-product-service.onrender.com/products', methods=['GET'])
 def retrieve_products():
     return jsonify(products)
 
