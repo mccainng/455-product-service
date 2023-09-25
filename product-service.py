@@ -8,7 +8,6 @@ products = [
     {"id": 3, "name": "Essential Oils", "price": 10.99, "quantity": 250}
 
 ]
-
 # Endpoint 1: List products 
 @app.route('/products', methods=['GET'])
 def retrieve_products():
@@ -35,10 +34,7 @@ def add_new_product():
             "quantity": data['quantity']
         }
         products.append(new_product)
-        return jsonify({"message": "Product added successfully"}), 201
-    else:
-        return jsonify({"message": "Invalid request data"}), 400
+        return jsonify(new_product), 201
     
-
-if __name__ == 'main':
+if __name__ == '__main__':
     app.run(debug=True)
